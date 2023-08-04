@@ -6,7 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.registration.dao.EmployeeDaoImplementation;
+import com.registration.dao.EmployeeDaoImpl;
 import com.registration.dao.EmployeeDao;
 import com.registration.model.Employee;
 
@@ -43,7 +43,7 @@ public class EmployeeServlet extends HttpServlet {
 		employee.setAddress(address);
 		employee.setContact(contact);
 
-		EmployeeDao service = new EmployeeDaoImplementation();
+		EmployeeDao service = new EmployeeDaoImpl();
 
 		/**
 		 * This statement is used to call saveRegistration method and and get result in boolean form

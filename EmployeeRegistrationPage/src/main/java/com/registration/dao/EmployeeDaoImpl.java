@@ -7,7 +7,7 @@ import com.registration.model.Employee;
 import com.registration.util.DatabaseConnection;
 
 /*This class is used for define methods body*/
-public class EmployeeDaoImplementation implements EmployeeDao {
+public class EmployeeDaoImpl implements EmployeeDao {
 
 	private PreparedStatement preparedStatement;
 	private Connection connection;
