@@ -2,14 +2,14 @@
 /* This function is active when browser is load */
 $(document).ready(function() {
 	/* This function is used to validate first name */
-	$("#firstname").on("keyup blur", function() {
+	$("#firstname").on("input blur", function() {
 		var firstName = $('#firstname').val();
 
 		if (firstName == "") {
-			$("#firstnameError").html("First name is required");
+			$("#firstnameError").html("First name is required.");
 		}
 		else if ((firstName.length < 3) || (firstName.length > 20)) {
-			$("#firstnameError").html("*Name must be between 3 and 20 letters");
+			$("#firstnameError").html("First name must be between 3 and 20 letters.");
 		}
 		else {
 			$("#firstnameError").html("");
@@ -17,14 +17,14 @@ $(document).ready(function() {
 	});
 
 	/* This function is used to validate last name */
-	$("#lastname").on("keyup blur", function() {
+	$("#lastname").on("input blur", function() {
 		var lastName = $('#lastname').val();
 
 		if (lastName == "") {
-			$("#lastnameError").html("*Last name is required");
+			$("#lastnameError").html("Last name is required.");
 		}
 		else if ((lastName.length < 3) || (lastName.length > 20)) {
-			$("#lastnameError").html("*Name must be between 3 and 20 letters");
+			$("#lastnameError").html("Last name must be between 3 and 20 letters.");
 		}
 		else {
 			$("#lastnameError").html("");
@@ -42,14 +42,14 @@ $(document).ready(function() {
 		}
 	});
 	/* This function is used to validate user name */
-	$("#username").on("keyup blur", function() {
+	$("#username").on("input blur", function() {
 		var username = $('#username').val();
 
 		if (username == "") {
-			$("#usernameError").html("*Username is required");
+			$("#usernameError").html("Username is required.");
 		}
 		else if ((username.length < 3) || (username.length > 20)) {
-			$("#usernameError").html("*Username must be between 3 and 20 characters");
+			$("#usernameError").html("Username must be between 3 and 20 characters.");
 		}
 		else {
 			$("#usernameError").html("");
@@ -57,18 +57,18 @@ $(document).ready(function() {
 	});
 
 	/* This function is used to validate password */
-	$("#password").on("keyup blur", function() {
+	$("#password").on("input blur", function() {
 		var passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
 		var password = $('#password').val();
 
 		if (password == "") {
-			$("#passwordError").html("*Password is required");
+			$("#passwordError").html("Password is required.");
 		}
 		else if (password.length < 8) {
-			$("#passwordError").html("*Password must be 8 characters");
+			$("#passwordError").html("Password must be 8 characters.");
 		}
 		else if (!password.match(passwordPattern)) {
-			$('#passwordError').html('**Password must be strong(demo@123)')
+			$('#passwordError').html('Password must be strong(demo@123).')
 		}
 		else {
 			$("#passwordError").html("");
@@ -90,14 +90,14 @@ $(document).ready(function() {
 	});
 
 	/* This function is used to validate address */
-	$("#address").on("keyup blur", function() {
+	$("#address").on("input blur", function() {
 		var address = $('#address').val();
 
 		if (address == "") {
-			$("#addressError").html("*Address is required");
+			$("#addressError").html("Address is required.");
 		}
 		else if (address.length < 20) {
-			$("#addressError").html("*Address must be 20 characters");
+			$("#addressError").html("Address must be 20 characters.");
 		}
 		else {
 			$("#addressError").html("");
@@ -105,14 +105,14 @@ $(document).ready(function() {
 	});
 
 	/* This function is used to validate contact */
-	$("#contact").on("keyup blur", function() {
+	$("#contact").on("input blur", function() {
 		var contact = $('#contact').val();
 
 		if (contact == "") {
-			$("#contactError").html("*Contact number is required");
+			$("#contactError").html("Contact number is required.");
 		}
 		else if ((contact.length < 10) || (contact.length > 17)) {
-			$("#contactError").html("*Contact number must be between 10 to 17 digit ");
+			$("#contactError").html("Contact number must be between 10 to 17 digit.");
 		}
 		else {
 			jQuery.ajax({
@@ -121,7 +121,7 @@ $(document).ready(function() {
 				type: "POST",
 				success: function(response) {
 					if (response === "true") {
-						$("#contactError").html("Contact number is already exists!.");
+						$("#contactError").html("Contact number is already exists!");
 						$('#registerButton').prop('disabled', true);
 					}
 					else {
