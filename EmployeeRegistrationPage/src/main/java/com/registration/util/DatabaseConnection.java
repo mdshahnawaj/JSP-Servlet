@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class DatabaseConnection extends DatabaseConstant {
+public class DatabaseConnection {
 
 	/**
 	 * This method is used for database connection
@@ -13,9 +13,8 @@ public class DatabaseConnection extends DatabaseConstant {
 	 * @return connection
 	*/
 	public Connection databaseConnection() throws ClassNotFoundException, SQLException {
-
-		Class.forName(DRIVER);
-		Connection connection = DriverManager.getConnection(URL_PATH, USER_NAME, PASSWORD);
+		Class.forName(DatabaseConstant.DRIVER);
+		Connection connection = DriverManager.getConnection(DatabaseConstant.URL_PATH, DatabaseConstant.USER_NAME, DatabaseConstant.PASSWORD);
 		return connection;
 	}
 
