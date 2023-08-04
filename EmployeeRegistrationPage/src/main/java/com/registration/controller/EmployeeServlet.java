@@ -43,13 +43,13 @@ public class EmployeeServlet extends HttpServlet {
 		employee.setAddress(address);
 		employee.setContact(contact);
 
-		EmployeeDao service = new EmployeeDaoImpl();
+		EmployeeDao employeeDao = new EmployeeDaoImpl();
 
 		/**
 		 * This statement is used to call saveRegistration method and and get result in boolean form
 		 * @param employee object
 		*/
-		boolean success = service.saveRegistration(employee);
+		boolean success = employeeDao.saveRegistration(employee);
 
 		if (success) {
 			request.setAttribute("message", "Registration done successfully:)");
@@ -67,7 +67,7 @@ public class EmployeeServlet extends HttpServlet {
 		 * This statement is used to call isMobileNumberExists method and and get result in boolean form
 		 * @param contactNumber
 		*/
-		boolean contactExists = service.isMobileNumberExists(contactNumber);
+		boolean contactExists = employeeDao.isMobileNumberExists(contactNumber);
 		response.getWriter().write(String.valueOf(contactExists));
 	}
 

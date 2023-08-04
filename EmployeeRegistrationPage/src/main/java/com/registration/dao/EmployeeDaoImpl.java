@@ -22,7 +22,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean saveRegistration(Employee employee) {
 		try {
 			connection = connect.databaseConnection();
-			String query = "insert into registeration (first_name, last_name, username, password, address, contact) values (?, ?, ?, ?, ?, ?)";
+			String query = "INSERT INTO registration (first_name, last_name, username, password, address, contact) VALUES (?, ?, ?, ?, ?, ?)";
 			preparedStatement = connection.prepareStatement(query);
 
 			preparedStatement.setString(1, employee.getFirstName());
@@ -50,10 +50,10 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	public boolean isMobileNumberExists(String contactNumber) {
 		try {
 			connection = connect.databaseConnection();
-			String query = "select contact from registeration where contact = '" + contactNumber + "'";
+			String query = "SELECT contact FROM registration WHERE contact = '" + contactNumber + "'";
 			preparedStatement = connection.prepareStatement(query);
-			ResultSet rs = preparedStatement.executeQuery();
-			return rs.next();
+			ResultSet result = preparedStatement.executeQuery();
+			return result.next();
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
