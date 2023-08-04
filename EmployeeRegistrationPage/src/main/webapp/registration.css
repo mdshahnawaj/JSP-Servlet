@@ -1,0 +1,89 @@
+/* This is css page of employee registration form */
+@charset "ISO-8859-1";
+* {box-sizing: border-box}
+
+.container {
+	padding: 50px;
+	width: 50%;
+	margin-left:25%;
+}
+
+ #hadding{
+	text-align: center;
+ }
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 2px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+span{
+	margin-bottom: 90px;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+hr{
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+.registerbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity:1;
+}
+
+a {
+	color: dodgerblue;
+}
+
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+
+.password-container {
+	position: relative;
+}
+
+.show-password-checkbox {
+	position: absolute;
+	top: 55%;
+	right: 10px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.registerbtn[disabled] {
+	position: relative;
+	filter: blur(0.5px);
+	cursor: not-allowed;
+}
+
+.registerbtn[disabled]:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.5);
+	pointer-events: none;
+}
